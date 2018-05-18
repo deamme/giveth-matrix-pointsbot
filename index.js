@@ -100,6 +100,7 @@ function authenticated(auth) {
           // const userAllowed = userList.filter(user => user === sender).length;
           const splittedMsg = message.split(" ");
           
+          const hasHelp = splittedMsg[0] === "!help";
           const hasSheet = splittedMsg[0] === "!sheet";
           const hasDish = splittedMsg[0] === "!dish";
           const hasNumber = parseInt(splittedMsg[1]);
@@ -132,6 +133,8 @@ function authenticated(auth) {
             client.sendTextMessage(roomId, "ERROR, please use the following format:\n!dish [#of points] [type of points] points to [handle] for [reason]");
           } else if (hasSheet) {
             client.sendTextMessage(roomId, "The RewardDAO sheet can be found here: " + "https://docs.google.com/spreadsheets/d/12cblUYuYq4NwZX7JdRo0-NWnrOxlDy-XCbvF3ugzb2c/edit?usp=sharing");
+          } else if (hasHelp) {
+            client.sendTextMessage(roomId, "Dish points using the following format:\n!dish [#of points] [type of points] points to [handle] for [reason]");
           }
         }
       });
