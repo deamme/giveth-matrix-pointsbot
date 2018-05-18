@@ -1,0 +1,16 @@
+{
+  "name": "pointsbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Deam",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "bignumber.js": "^7.0.1",
+    "dayjs": "^1.6.0",
+    "googleapis": "^30.0.0",
+    "matrix-js-sdk": "^0.10.2"
+  }
+}
